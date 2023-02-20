@@ -1,3 +1,4 @@
+package basic;
 
 public class Identifier {
 
@@ -50,7 +51,8 @@ public class Identifier {
 		System.out.println(숫자);
 		System.out.println(名);
 		
-		
+		double sosu = 6-2.5; 
+		System.out.println(sosu);
 		
 	}
 
