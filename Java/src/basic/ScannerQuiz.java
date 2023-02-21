@@ -13,11 +13,13 @@ public class ScannerQuiz {
 		
 		System.out.print("나이를 입력해 주세요: ");
 		int age = sc.nextInt();
-		int zzz = 2023 - age;
+		int year = 2023 - age;
 		
-		System.out.printf("\n 이름: %s \n 나이: %d세 \n 출생년도: %d년 ", name, age, zzz);
+		System.out.printf("\n이름: %s \n나이: %d세 \n출생년도: %d년 "
+				, name, age, year);
 		
-	
+		
+		sc.close();
 		
 
 	}
