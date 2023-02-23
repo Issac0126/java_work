@@ -12,12 +12,11 @@ public class WhileQuiz01 {
 			} i++; //
 			
 		}
-		System.out.println("1~30000까지의 수 중 258의 개수: " + itotal+"개");
+		System.out.println("1~30000까지의 수 중 258의 배수의 개수: " + itotal+"개");
 		System.out.println();
 
 		
-		int x = 1; //
-		int total = 0;  
+		int x = 1, total = 0;  
 		
 		while(x <= 1000) {			
 			if (1000 % x == 0) {
@@ -26,6 +25,7 @@ public class WhileQuiz01 {
 		}
 		
 		System.out.println("1000의 약수의 개수: "+total+"개");
+
 		
 	}
 }

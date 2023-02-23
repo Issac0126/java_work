@@ -14,7 +14,7 @@ public class ConOperatorQuiz {
 		//		
 		//		System.out.println("----------------------------------");
 
-		//스캐너 만들어서 숫자 입력받고, 몇 개 일치하는지 출력되는 코드를 만들자!
+		//		스캐너 만들어서 숫자 입력받고, 몇 개 일치하는지 출력되는 코드를 만들자!
 
 		Scanner sc = new Scanner(System.in);
 
@@ -134,6 +134,7 @@ public class ConOperatorQuiz {
 			total++;
 		}
 
+		
 		System.out.printf("\n 당신이 맞춘 숫자는 %d개 입니다.", total);
 		System.out.println();
 
@@ -159,5 +160,6 @@ public class ConOperatorQuiz {
 
 		}
 
+		sc.close();
 	}
 }
