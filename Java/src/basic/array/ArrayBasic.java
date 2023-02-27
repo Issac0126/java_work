@@ -24,13 +24,13 @@ public class ArrayBasic {
 		arr[0]= 65;
 		arr[1]= 88;
 		arr[2]= arr[0];
-		arr[3]= (int) 30;
+		arr[3]= (int) 30.5;
 		arr[4]= 100;
 		arr[5]= 77;
 //		arr[6]= 888; (x)배열의 길이 초과
 		
 		//4. 배열의 총 크기(길이) 확인 -> 배열변수명.length
-		System.out.println("arr 배열의 길이: "+arr.length);
+		System.out.println("arr 배열의 길이: "+arr.length); 
 		
 		//5. 배열의 저장된 값을 참조(사용)하는 법 (인덱스를 이용)
 		System.out.println("배열의 1번재 데이터: " +arr[0]);
@@ -69,7 +69,7 @@ public class ArrayBasic {
 		//만약 배열의 크기를 늘리거나 줄이고 싶다면
 		//기존의 배열을 조작하는 것이 아니라 새롭게 생성하셔야 합니다. ex/ (변수명) = new int[]{1, 2, 3, 4};
 		String[] names = {"박", "마", "구", "서"};
-//		names = new String[]{"박", "마", "구", "서", "함"};
+		names = new String[]{"박", "마", "구", "서", "함"};
 		System.out.println(Arrays.toString(names));
 		
 		

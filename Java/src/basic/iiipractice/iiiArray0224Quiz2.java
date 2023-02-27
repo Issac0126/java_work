@@ -34,6 +34,7 @@ public class iiiArray0224Quiz2 {
 			System.out.print(f + " ");
 		}
 
+		sc.close();
 
 	}
 }

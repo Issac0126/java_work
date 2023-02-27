@@ -30,7 +30,7 @@ public class ArrayInsertQuiz {
 
 		System.out.println("먹고싶은 음식을 입력하세요.");
 
-		for(int i =0; i< food.length ;i++) {
+		out : for(int i =0; i< food.length ;i++) {
 			System.out.print("> ");
 			String answer = sc.nextLine();
 
@@ -38,6 +38,16 @@ public class ArrayInsertQuiz {
 				System.out.println("입력을 종료합니다.");
 				break;
 			}
+			
+			for(int j=0; j<food.length; j++) {
+				if(answer.equals(food[j])) {
+					System.out.println("중복된 음식입니다.");
+					i -= 1;
+					continue out;
+				}
+				
+			}
+			
 			food[i] = answer;
 		}
 
@@ -52,14 +62,8 @@ public class ArrayInsertQuiz {
 		}
 
 
+		sc.close();
 	}
-
-
-
-
-
-
-
 
 
 }

@@ -34,7 +34,7 @@ public class iii0224Quiz {
 		}
 		
 		
-		
+		sc.close();
 		
 		
 		
