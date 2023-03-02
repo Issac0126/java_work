@@ -34,13 +34,17 @@ public class MethodExample1 {
 	
 	public static void main(String[] args) {
 		
+		int total = calcTotal(10);
+		calcTotal(100);
+		System.out.println(total);
+		
 		System.out.println(calcTotal(200));
-		
-		
-		
-		
 		System.out.println(calcTotal(300));
-		System.out.println(calcTotal(10));
+
+		
+		System.out.println("1~10까지의 누적합: "+calcTotal(10));
+		System.out.println("1~10까지의 누적합: "+calcTotal(10));
+		System.out.println("1~10까지의 누적합: "+calcTotal(10));
 		
 		
 		

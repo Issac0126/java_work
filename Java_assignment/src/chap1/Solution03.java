@@ -20,23 +20,19 @@ public class Solution03 {
 
 		int[] rank = new int[5]; //순위 넣을 배열
 
+		System.out.println("\n\n점수\t순위");
+		System.out.println("─────────────");
+		
 		for(int i=0;i<scores.length;i++) {
 			int count = 1; //순위 셀 카운트. 한바퀴마다 리셋
 
 			for(int j=0;j<scores.length;j++) {
 				if(scores[i] < scores[j]) count++; //본인보다 높은 정수가 있을 때마다 카운트가 올라감.
 			}	
-			rank[i] = count; //랭킹 배열에 넣어주기
+			System.out.printf("%d\t %d위 \n", scores[i], count);
 		}
 
-
-		System.out.println("\n\n점수\t순위");
-		System.out.println("─────────────");
-
-		for(int i=0;i<scores.length; i++) {	
-			System.out.printf("%d\t %d위 \n", scores[i], rank[i]);
-		}
-
+		
 		sc.close();
 
 

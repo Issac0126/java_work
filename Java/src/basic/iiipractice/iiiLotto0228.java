@@ -24,11 +24,10 @@ public class iiiLotto0228 {
 			if(!flag) {
 				num6[i] = ran;
 			}//진짜 로또번호 구하기 완성!!!!
-
 		}//6개 다 정해지면 나오기
 		return num6;
 
-	}//num6lotto end...
+	}//num6lotto end...  랜덤 6개의 숫자를 구하는 메서드
 
 	public static void main(String[] args) {
 
@@ -36,12 +35,11 @@ public class iiiLotto0228 {
 		int[] rightNum = new int[6]; //진짜 복권 당첨되는 번호
 		int[] anNum = new int[6]; //직접 적은 번호
 		int[] otNum = new int[6]; //오토로 뽑은 번호
-
 		
 		System.out.println("게임을 시작하려면 'Enter'를 눌러주세요.");
 		sc.nextLine();
 		
-		int choise=0; //자동 수동 선택
+		int choise=0; //자동 수동 선택하기위한 선언
 		System.out.println("■ 원하시는 서비스를 입력해주세요. \n자동입력(0) / 수동입력(1)");
 
 		while(true) {//자동이냐 수동이냐로 돌려보장
@@ -56,14 +54,20 @@ public class iiiLotto0228 {
 				System.out.println("■ 뽑힌 번호는 "+Arrays.toString(otNum)+" 입니다.");
 				break; //자동 뽑기 end!!
 
-			} else if(choise==1) {//수동일 경우
-				//수동 6개의 난수를 입력.
+			} else if(choise==1) {//수동일 경우   //수동 6개의 난수를 입력.
+
 				System.out.println("\n\n======================================");
 				System.out.println("\n■ 번호를 수동으로 입력합니다.");
+				
 				for(int i=0; i<anNum.length; i++) {//수동 번호 입력 start
 					System.out.print((i+1)+"번째 번호: ");
 					anNum[i] = sc.nextInt();
-
+					
+					if(anNum[i]<1 || anNum[i]>45) { //1부터 45 숫자만 가능하다~
+						System.out.println("1부터 45까지의 숫자만 입력이 가능합니다.\n");
+						i--;
+						continue;
+					}
 					for(int j=0; j<i; j++) {//중복 걸러내기
 						if(anNum[i]==anNum[j]) {
 							System.out.println("중복된 숫자는 입력이 불가능합니다.\n");
@@ -93,28 +97,38 @@ public class iiiLotto0228 {
 		System.out.println(".\n.\n.\n.");
 		rightNum=num6lotto(); //정답 뽑기 두근두근
 		
-		System.out.println("\n당첨된 숫자는"+Arrays.toString(rightNum)+" 입니다!");
+		System.out.println("\n\n당첨된 숫자는"+Arrays.toString(rightNum)+" 입니다!");
 		
-		switch(choise){
-		case 0 :
-			System.out.println("당신의 숫자는"+Arrays.toString(otNum)+"입니다.\n");	break;
-		case 1 :
-			System.out.println("당신의 숫자는"+Arrays.toString(anNum)+"입니다.\n");	break;
-		}//숫자 출력 완료!!
+		if(choise==0)  anNum = otNum; // 수동입력 자동입력 합쳐주기!!
+		System.out.println("\n입력한 숫자는"+Arrays.toString(anNum)+"입니다.\n");	
 		
 		
-		for(int i=0; i<??; i++) { //이제 얼마나 겹쳤는지 확인해보장...ㅎㅎ
-			
+		int count=0;//몇 개 맞췄는지 카운트
+		
+		for(int i=0; i<6; i++) { //이제 얼마나 겹쳤는지 확인해보장...ㅎㅎ
+			for(int j=0; j<6; j++) {
+				if(rightNum[i]==anNum[j])   count++; //겹치면 카운트가 올라갑니당
+			}
+		}// 겹치는 숫자 세기 for문 end
+		
+		
+		System.out.println("총 "+count+"개의 숫자를 맞추셨습니다.");
+		switch(count) {
+		case 6 :
+			System.out.println("축하합니다! 1등입니다.");	break;
+		case 5 :
+			System.out.println("2등입니다!");			break;
+		case 4 :
+			System.out.println("3등입니다.");			break;
+		case 3 :
+			System.out.println("4등입니다.");			break;
+		case 2 :
+			System.out.println("5등입니다...");			break;
+		case 1 : case 0 :
+			System.out.println("꼴등입니다......");	break;
 		}
-		
-		
-		
-		
-		
-		
 
 		sc.close();
 
 	}
-
 }
