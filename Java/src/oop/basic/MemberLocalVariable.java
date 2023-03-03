@@ -17,10 +17,27 @@ package oop.basic;
 */
 
 public class MemberLocalVariable {
-
+	
+	int a; //맴버 변수 = 필드. .. 기본값으로 자동 초기화됨. =0
+	void printnumber(int c) { //매개 변수. (지역변수에 속하긴하나 역할이 명확해서 매개변수라는표현이 맞지..
+		int b=0 ; //지역 변수... 로컬 자동초기화 없음 직접 설정해야향\ㅏㅁ.
+		System.out.println("멤버 변수 a: "+a);
+		System.out.println("지역 변수 b: "+b);
+		System.out.println("매개변수 c: "+c);
+		
+	} 
+	
+	//뭐라도써야지안졸린다.. 생성자가 뭐지 메서드는 알겠는ㄷ ㅔ 
+	/*
+	 생성자 =객체를 생성해주는 자 
+	 얘가 잇엇 야 객체를 생성해줄 수가 있다. 
+	 예실륻 든다고 하심. 스캐너 그ㅓㄹ\ㄴ건감? 
+	 */
+	
 	public static void main(String[] args) {
-		
-		
+		MemberLocalVariable m =new MemberLocalVariable();
+		m.printnumber(4);
+		//
 		
 		
 		
