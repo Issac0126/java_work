@@ -39,7 +39,6 @@ public class MathodQuiz02 {
 	}//indexOf end~~~
 	
 	
-	
 	//특정 음식의 배열 포함 여부 (참/거짓)
 	//indexOf의 리턴값으로 판단하여 리턴. (한줄짜리ㅇㅇ)
 	static boolean include(String targetName) {

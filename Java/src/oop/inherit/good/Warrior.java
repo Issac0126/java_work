@@ -18,12 +18,4 @@ public class Warrior extends Player {
 		System.out.println("# 분노: "+rage);
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
 }
