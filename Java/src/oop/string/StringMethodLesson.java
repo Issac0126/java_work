@@ -2,7 +2,7 @@ package oop.string;
 
 import java.util.Arrays;
 
-public class Hello {
+public class StringMethodLesson {
 
 	public static void main(String[] args) {
 		
@@ -10,7 +10,6 @@ public class Hello {
 		
 		String arc = "A piece of CAKE";
 		System.out.println("arc");
-		
 		
 		System.out.println("1. 변수명.charAt(Idx)");
 		System.out.println("지목받은 인덱스의 글자를 챠 형식으로 꺼내준다.");
@@ -29,9 +28,11 @@ public class Hello {
 		
 		System.out.println("\n4. 변수명.indexOf(문자) << 여기에 큰따옴표");
 		System.out.println("문구를 입력하면 인덱스 번호를 찾아줌. 없으면 -1로.");
-		System.out.println("●a 찾기: "+arc.indexOf("a"));
+		System.out.println("한글자 말고 단어도 가능! 단어의 첫 인덱스를 찾아준다.");
+		System.out.println("●a 찾기: "+arc.indexOf("e"));
+		System.out.println("●piece 찾기: "+arc.indexOf("piece"));
 		System.out.println("여기서 잠깐! 뒤에서부터 찾고 싶으면 last를 더해주기.");
-		System.out.println("●(뒤부터) a 찾기: "+ arc.lastIndexOf("a"));
+		System.out.println("●(뒤부터) a 찾기: "+ arc.lastIndexOf("e"));
 		
 		System.out.println("\n5. 변수명.toLowerCase()");
 		System.out.println("전부 소문자로... 로우어ㅇㅇ");
