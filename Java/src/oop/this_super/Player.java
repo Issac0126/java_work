@@ -73,8 +73,11 @@ public class Player {
 		//상대방의 체력을 10 낮추고, 나의 체력을 5 회복하자.
 		target.hp -=10;
 		this.hp +=5;
+		if(target.hp<=0) {
+			System.out.printf("\n%s가 쓰러졌습니다. (체력: 0)", target.name);
+			return;
+		}
 		System.out.printf("\n 나의 체력: %d / 상대방의 체력: %d\n\n", this.hp, target.hp);
-		
 	}
 	
 	

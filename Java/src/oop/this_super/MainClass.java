@@ -29,7 +29,7 @@ public class MainClass {
 		
 		System.out.println();
 		
-		Warrior w1 = new Warrior("전사 짱짱");
+		Warrior w1 = new Warrior("전사짱짱");
 		w1.characterInfo();
 		
 		System.out.println();
@@ -42,10 +42,11 @@ public class MainClass {
 		Hunter h1 = new Hunter("사냥꾼이대세다");
 		h1.characterInfo();
 		
+		System.out.println("---------------------");
 		
-		
-		
-		
+		w1.attack(m1);
+		m1.attack(h1);
+		w1.attack(m1);w1.attack(m1);w1.attack(m1);w1.attack(m1);w1.attack(m1);
 		
 		
 	}
