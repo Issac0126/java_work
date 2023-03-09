@@ -13,14 +13,22 @@ public abstract class Shape {
 	
 	private String name; //1번
 	
-	public Shape(String name) { //2번
+	public Shape(String name) { //2번 //얘가 세터의 역할을 함.
 		this.name=name;
 	}
 	
 	abstract double getArea(); //3번
 		
-	public void getName() { //4번
-		System.out.println(this.name);
+	public String getName() { //4번
+		return this.name;
 	}
+
+	public void setName(String name) {
+		this.name = name;
+	}	//처음 지정한 이름으로 쭉 갈거라면 굳이 필요 없는 코드이나... 
+		//하나 만들어두는 것을 추천함.	
+	
+	
+	
 	
 }

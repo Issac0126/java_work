@@ -15,21 +15,20 @@ public class MainClass {
          로직을 알아서 작성해 주세요.
          
         - MainClass에서 길이가 5인 정사각형,
-         반지름이 4인 원의 모든 내용을 호출해 보세요. 원: r*r*3.14 
+         반지름이 4인 원의 모든 내용을 호출해 보세
+         요. 원: r*r*3.14 
         */
 		
 		
 		Shape rectShape = new Rect("네모", 5); 
 		Shape circleShape = new Circle("동그라미", 4); 
 		
-		System.out.print("이름: ");
-		rectShape.getName();
-		System.out.printf("길이가 5인 사각형의 넓이: %.1f\n"
+		System.out.print("이름: "+ rectShape.getName());
+		System.out.printf("\n길이가 5인 사각형의 넓이: %.1f\n"
 				, rectShape.getArea());
 		
-		System.out.print("\n이름: ");
-		circleShape.getName();
-		System.out.printf("반지름이 4인 원의 넓이: %.1f\n"
+		System.out.print("\n이름: "+circleShape.getName());
+		System.out.printf("\n반지름이 4인 원의 넓이: %.1f\n"
 				, circleShape.getArea());
 		
 		
