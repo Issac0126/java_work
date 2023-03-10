@@ -48,6 +48,13 @@ public class ScoreMain {
 					continue;
 					}
 				
+				/*
+				 score[i] = new s.set(name, kor, eng, mat);
+				 오 짧당
+				 */
+				
+				
+				
 				s.set(name, kor, eng, mat);
 				score[i] = s;
 				i++;
@@ -66,8 +73,13 @@ public class ScoreMain {
 		
 		System.out.println("\n\n이름\t국어   영어   수학   총점   평균");
 		System.out.println("──────────────────────────────────────");
-		for(int j=0; j<i; j++) {
-			score[j].scoreInfo();
+//		for(int j=0; j<i; j++) {
+//			score[j].scoreInfo();
+//			System.out.println();
+//		}
+		for (Score s : score) {
+			if(s==null) break;
+			s.scoreInfo();
 			System.out.println();
 		}
 		
