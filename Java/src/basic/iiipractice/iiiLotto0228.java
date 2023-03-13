@@ -122,10 +122,8 @@ public class iiiLotto0228 {
 			System.out.println("3등입니다.");			break;
 		case 3 :
 			System.out.println("4등입니다.");			break;
-		case 2 :
-			System.out.println("5등입니다...");			break;
-		case 1 : case 0 :
-			System.out.println("꼴등입니다......");	break;
+		case 2 : case 1 : case 0 :
+			System.out.println("꼴등입니다......");			break;
 		}
 
 		sc.close();
