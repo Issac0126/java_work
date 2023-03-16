@@ -32,7 +32,7 @@ public class OutputStreamEx {
 			
 			byte[] arr = str.getBytes(); //문자열 데이터를 byte 단위로 변환
 			
-			fos.write(arr); //파일을 바이트 단위로 써 내림.
+			fos.write(arr); //파일을 2바이트 단위로 써 내림.
 			//빨간 줄 생긴 이유: 얘도 thouws 포함되어있음.
 			System.out.println("파일이 정상적으로 저장되었다.");
 			

@@ -86,7 +86,7 @@ public class Solution04copy {
 //		}//중복확인 및 출력! End
 		
 		for(int i=0; i<students.length; i++) {//중복확인
-			if(students[i]==false) {
+			if(!students[i]) {
 				System.out.print((i+1)+"번 ");
 			}		
 		}//중복확인완료

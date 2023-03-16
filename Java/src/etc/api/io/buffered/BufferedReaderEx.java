@@ -19,6 +19,7 @@ public class BufferedReaderEx {
 			
 			//BufferedReader에는 readLine() 메서드가 있고
 			//한 줄을 통째로 읽어서 String으로 리턴한다.
+			//더 이상 읽어들일 데이터가 없다면 null을 리턴한다.
 			System.out.println(br.readLine());
 			
 			String str;
