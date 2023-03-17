@@ -1,12 +1,21 @@
 package chap2.quiz01;
 
 public class Student extends Person {
-
+	
 	String studentId;
-
-	public Student(String name, int age, String studentId) {
-		super.info(name, age);
-		System.out.println(", 학번: "+studentId);
+	
+	String info(String name, int age, String studentId) {
+		System.out.print(super.info(name, age));
+		return ", 학번: "+studentId;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

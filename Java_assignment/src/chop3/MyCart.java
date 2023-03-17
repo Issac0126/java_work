@@ -45,11 +45,13 @@ public class MyCart {
 		cart[i]= trade;
 		i++;
 		if(i<=cart.length) {
-			System.out.println(trade.name);
+//			System.out.println(trade.name);
+			
 			Product temp[] = new Product[cart.length*2];
 			for(int j=0; j<cart.length; j++) {
 				temp[j] = cart[j];
 			}
+			  
 			cart = temp;
 			temp = null;
 			info(trade);

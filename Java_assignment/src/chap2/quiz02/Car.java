@@ -47,8 +47,8 @@ public class Car {
 	
 	void engineStart() { //시동 걸기
 		System.out.println("시동버튼을 눌렀습니다."); //1
-		injectGasoline(); //2
-		injectOil(); //3
+		injectOil(); //2
+		injectGasoline(); //3
 		start = true; //4
 		moveCylinder(); //5
 		System.out.println("시동이 걸렸습니다.");
@@ -72,10 +72,10 @@ public class Car {
 	}//실린더 end
 	
 	void engineStop() { //시동을 끄는 기능입니다.
-		if(speed > 0) {
+		if(this.speed > 0) {
 			System.out.println("주행 중에는 시동을 끌 수 없습니다.");
 			return;
-		} else if(mode!='P') {
+		} else if(this.mode!='P') {
 			System.out.println("P 모드로 먼저 변속기를 변경하세요.");
 			return;
 		} else {
