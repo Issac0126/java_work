@@ -1,4 +1,4 @@
-package collection.list;
+package chap4;
 
 import java.util.Scanner;
 
@@ -24,12 +24,42 @@ public class Student {
 
 	//학생 정보를 받아서 객체화 시킬 메서드
 	public void inputStuInfo() {
-		System.out.println("# 성적 정보 입력을 시작합니다.");
+		System.out.println("\n# 성적 정보 입력을 시작합니다.");
 		System.out.print("- 학번: ");
-		this.stuId = sc.next();
+		this.stuId = sc.next();			
 		System.out.print("- 이름: ");
 		this.name = sc.next();
-
+		System.out.println("\n# 점수를 입력합니다.");
+		
+		while(true) {
+			try {
+				System.out.print("- 국어 점수: ");
+				this.kor = sc.nextInt();
+				if(kor>100 || kor<0) {
+					System.out.println("0~100 사이의 정수를 입력해주세요.");
+					continue;
+				}
+				System.out.print("- 영어 점수: ");
+				this.eng = sc.nextInt();
+				if(eng>100 || eng<0) {
+					System.out.println("0~100 사이의 정수를 입력해주세요.");
+					continue;
+				}
+				
+				System.out.print("- 수학 점수: ");
+				this.math = sc.nextInt();
+				if(math>100 || math<0) {
+					System.out.println("0~100 사이의 정수를 입력해주세요.");
+					continue;
+				}
+				return;
+				
+			}catch (Exception e) {
+				System.out.println("# 학번은 정수만 기입이 가능합니다.\n");
+				sc.nextLine();
+				continue;
+			}			
+		}
 		/*
 		국어, 영어, 수학 점수를 입력받습니다. 
 		혹시라도 정수가 아닌 다른 값이 들어올 시에 

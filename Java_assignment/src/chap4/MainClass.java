@@ -1,4 +1,4 @@
-package collection.list;
+package chap4;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,7 @@ public class MainClass {
 				if(sList.isEmpty()) {
 					System.out.println("등록된 학생이 없습니다. 먼저 등록부터 하세요.");
 				} else {
-					p.showAllPoints(sList);					
+				p.showAllPoints(sList);					
 				}
 				break;
 			case 3:

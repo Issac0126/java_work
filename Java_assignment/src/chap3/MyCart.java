@@ -1,4 +1,4 @@
-package chop3;
+package chap3;
 
 import java.util.Arrays;
 
@@ -42,16 +42,14 @@ public class MyCart {
 
     - 모든 로직이 완료되면 info() 메서드를 호출합니다.
 		 */
-		cart[i]= trade;
-		i++;
 		if(i<=cart.length) {
 //			System.out.println(trade.name);
-			
 			Product temp[] = new Product[cart.length*2];
+			cart[i]= trade;
+			i++;
 			for(int j=0; j<cart.length; j++) {
 				temp[j] = cart[j];
 			}
-			  
 			cart = temp;
 			temp = null;
 			info(trade);

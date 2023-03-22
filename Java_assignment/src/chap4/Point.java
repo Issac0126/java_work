@@ -1,4 +1,4 @@
-package collection.list;
+package chap4;
 
 import java.util.List;
 import java.util.Scanner;
@@ -10,7 +10,7 @@ public class Point {
 
 	// 점수 입력창 틀 메서드.
 	public void showPointUI() {
-		System.out.println("================================================================");
+		System.out.println("\n================================================================");
 		System.out.printf("%4s%6s%7s%8s%8s%8s%8s%8s\n"
 				, "학번", "이름", "국어", "영어", "수학", "총점", "평균", "학점");
 		System.out.println("================================================================");
@@ -19,7 +19,7 @@ public class Point {
 
 	//프로그램 메뉴 정보를 보여줄 메서드
 	public int menuInfo() {
-		System.out.println("\n*** 성적 관리 프로그램 ***");
+		System.out.println("\n\n*** 성적 관리 프로그램 ***");
 		System.out.println("# 1. 성적 정보 입력");
 		System.out.println("# 2. 전체 성적 조회");
 		System.out.println("# 3. 개별 성적 조회");
@@ -33,7 +33,7 @@ public class Point {
 	}
 
 	//1. 학생의 성적 정보를 입력할 메서드
-	public void inputPoints(???) {
+	public void inputPoints(List<Student> sList) {	
 		/*
 		 1. 학생 객체를 1개 생성합니다.
 		 2. 학생 객체에 속성값을 설정하는 메서드들을 호출해야 합니다.
@@ -41,12 +41,13 @@ public class Point {
 		 4. 저장 완료 메세지를 호출하세요.
 		 ex) XXX님의 성적 정보가 정상적으로 입력되었습니다.
 		 */
-		
+		Student stu = new Student();
+		sList.add(stu);
+		System.out.println(stu.getName()+"님의 성적 정보가 정상적으로 입력되었습니다..");
 	}
 
 	//2. 전체 학생들의 성적 정보를 출력할 메서드
-	public void showAllPoints(???) { //학생 객체들이 들어있는 리스트가 와야죠?
-
+	public void showAllPoints(List<Student> sList) { //학생 객체들이 들어있는 리스트가 와야죠?
 		/*
 		 1. 리스트 안에 들어있는 학생 객체들의 정보를
 		  반복문을 이용하여 하나씩 전체 출력해야 합니다.
@@ -57,30 +58,43 @@ public class Point {
 
 		 3. 우리 반 평균을 가장 아랫부분에 출력해야 합니다.
 		 */
-		
-		
+
+		int total=0;
+		showPointUI();
+		for(Student l : sList) {
+			l.outputStuInfo();	
+			l.calcTotAvgGrade(); //평균 출력
+			total+=l.getAverage();			
+		}
+		System.out.println("\n우리반 평균: "+(total/sList.size()));
 
 	}
 
 	//3. 개별 성적 조회 로직을 처리할 메서드
-	
 	public void searchPoint(List<Student> students) {
-		System.out.println("성적을 조회할 학생의 학번을 입력하세요.");
+		System.out.println("\n성적을 조회할 학생의 학번을 입력하세요.");
 		System.out.print("> ");
 		String stuNum = sc.next();
-		
+
+		for(Student l : students) {
+			if(l.getStuId().equals(stuNum)) {
+				l.outputStuInfo();
+				return;
+			}
+		}
+		System.out.println("등록되지 않은 학번입니다.");
 		/*
 		 1. 입력받은 학번과 일치하는 학생 객체를 리스트에서 찾아내어
 		  그 학생의 성적 정보만 출력합니다.
 		 2. 찾는 학번이 존재하지 않는다면 검색하지 못했다는
 		  메세지를 출력해 주세요.
 		 */
-		
-		
+
+
 	}
-	
+
 	//4. 학생의 개인 성적 정보를 수정하는 메서드
-	public void modifyPoint(List<Student> students) {
+	public void modifyPoint(List<Student> students) {		
 		/*
 		 - 학번을 먼저 입력받으세요.
 		 - 해당 학번과 일치하는 학생 객체를 리스트에서 찾아내어
@@ -88,14 +102,39 @@ public class Point {
 		  수정을 진행합니다.
 		  점수를 수정했다면 그 학생의 총점, 평균, 학점도 
 		  새롭게 계산해 주셔야 합니다.
-		  
+
 		 - 찾는 학번이 없을 시 검색하지 못했다는 메세지를 출력해 주세요.
 		 */
-		
-		
-		
+
+		System.out.println("\n정보를 수정할 학생의 학번을 입력하세요.");
+		System.out.print("> ");
+		String stuNum = sc.next();
+
+		for(Student l : students) {
+			if(l.getStuId().equals(stuNum)) {
+
+				while(true) {
+					try {
+						System.out.println("\n# 점수를 수정합니다.");
+						System.out.println("- 국어 점수: ");
+						l.setKor(sc.nextInt());
+						System.out.println("- 영어 점수: ");
+						l.setEng(sc.nextInt());
+						System.out.println("- 수학 점수: ");
+						l.setMath(sc.nextInt());
+
+						System.out.println(l.getName()+"님의 점수 수정이 완료되었습니다.");
+						return;
+					}catch (Exception e) {
+						System.out.println("# 학번은 정수만 기입이 가능합니다./n");
+						continue;
+					}			
+				}
+			}
+		}
+		System.out.println("등록되지 않은 학번입니다.");
 	}
-	
+
 	//5. 학생 정보를 삭제하는 메서드
 	public void deletePoint(List<Student> students) {
 		/*
@@ -104,23 +143,46 @@ public class Point {
 		  (리스트에서 해당 객체의 주소값 없애기)
 		  학생 정보를 삭제할 때 "XXX님의 정보를 삭제합니다.[Y / N]"
 		  를 출력하셔서 한 번 더 삭제 여부를 확인해 주세요.
-		  
+
 		 - 학생이 없다면 없다고도 출력해 주세요.
 		 */
-		
-		
-	}
-	
-	
-	
-	
-	
+		System.out.println("\n삭제할 학생의 학번을 입력하세요.");
+		System.out.print("> ");
+		String stuNum = sc.next();
 
-	
+		for(Student l : students) {
+			if(l.getStuId().equals(stuNum)) {
+
+				while(true) {
+					System.out.print(l.getName()+"님의 정보를 삭제하시겠습니까? [Y / N]\n> ");	
+					String answer = sc.next();
+
+					switch (answer) {
+					case "Y": case "y": case "ㅛ":{
+						students.remove(l);					
+						System.out.println("\n# 삭제가 완료되었습니다.");
+						return;
+					}
+					case "N": case "n": case "ㅜ":{
+						System.out.println("삭제를 취소합니다.");
+						return;
+					}
+					default:
+						System.out.println("유효한 값을 입력해주세요. [Y / N]");
+						continue;
+					}
+				}
+			}
+		}
+		System.out.println("등록되지 않은 학번입니다.");
+
+	}
+
+
 	public void close() {
 		sc.close();
 	}
-	
+
 
 
 }

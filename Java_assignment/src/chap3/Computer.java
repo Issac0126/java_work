@@ -1,4 +1,4 @@
-package chop3;
+package chap3;
 
 public class Computer extends Product {
 
